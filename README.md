@@ -1,6 +1,6 @@
 # Mind Over Matter: Mental Health Support Website
 
-**live website**:  https://piyushkumar0807.github.io/MIND-OVER-MATTER/
+**live website**: 
 ## Overview
 MindfullConnect is a **frontend website** and **Backend** developed to provide comprehensive mental health resources and support. Built using HTML, CSS, and JavaScript,PHP,MySql it offers users tools for self-assessment, access to professional services, and emergency support. This platform responds to the growing demand for accessible online mental health services and aims to improve psychological well-being through interactive features, educational content, and real-time support.
 
