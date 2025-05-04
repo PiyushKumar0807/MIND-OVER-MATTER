@@ -1,0 +1,400 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIND OVER MATTER</title>
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" /> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> 
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <div class="img-div">
+                    <img id="logo" src="images/logo.png" alt="Logo"><a href="index.html">
+                </div>
+            </div>
+            <div class="mobile-nav-btn">
+                <button onclick="openNav()">
+                    <img src="images/Hamburger_icon.svg.png" alt="" />
+                </button>
+            </div>
+            <div id="mobile-nav" class="mobile-nav">
+                <div class="cross-icon">
+                    <button onclick="closeNav()">
+                        <svg fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 490 490" xml:space="preserve">
+                            <polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 
+                            489.292,457.678 277.331,245.004 489.292,32.337 " />
+                        </svg>
+                    </button>
+                </div>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="resourcelibrary.html">Resources Library</a></li>
+                    <li><a href="interactiveTools.html">Interactive Tools</a></li>
+                    <li><a href="professionalTools.html">Professional Service</a></li>
+                    <li><a href="emergencyService.html">Emergency Service</a></li>
+                    <?php if (isset($_SESSION['username'])): ?>
+    <li><a href="#">Welcome <?php echo $_SESSION['username']; ?></a></li>
+    <li><a href="logout.php">Logout</a></li>
+<?php else: ?>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="signup.html">Sign Up</a></li>
+<?php endif; ?>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--end of header -->
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <video autoplay muted loop class="hero-video">
+                <source src="vid.mp4">
+            </video>
+            <div class="hero-text">
+                <h1>Empower Your Mind, Transform Your Life</h1>
+                <p>Your trusted space for cultivating mental well-being, embracing mindfulness, and unlocking your full potential.</p><br>                
+            </div>
+        </section>
+        
+    
+        <!-- CTA Section -->
+        <section class="CTA" id="CTA">
+            <h2>Join a Community That Supports You</h2>
+            <br>
+            <p>We understand that mental well-being is a personal journey, and at Mind Over Matter, you’ll never walk it alone. With ongoing support from our platform and community, you’ll find encouragement, guidance, and a safe space to grow. Together, we’ll help you nurture your mental health every step of the way.</p>
+        </section>
+
+        <section class="about" id="about">
+            <h2>About Us</h2><br>
+            <p>At Mind Over Matter, our mission is to create a platform where individuals can find encouragement, guidance, and a safe space to grow and nurture their mental health at every step of their journey. We believe that mental well-being is essential to living a fulfilled life, and we are here to help you navigate through life's challenges. Whether it's managing stress, enhancing self-awareness, or seeking professional help, our goal is to provide the resources and support you need to prioritize your mental health and achieve a balanced, happier life.</p>
+        </section>
+
+    <!-- Services We Provide Section -->
+<section id="services" class="section">
+    <div class="container">
+        <h1>Our Services</h1>
+        <p>Explore the range of services we offer to help you prioritize and nurture your mental well-being:</p>
+        
+        <div class="services">
+            <div class="service-card">
+                <h3>Resource Library</h3>
+                <p>Access a wide range of resources, including videos, articles, and podcasts, designed to inform, inspire, and support you on your mental health journey.</p>
+            </div>
+            <div class="service-card">
+                <h3>Mood Tracker</h3>
+                <p>Take our mood tracker quiz to analyze your current emotional state and receive personalized meditation suggestions to uplift your mood and well-being.</p>
+            </div>
+            <div class="service-card">
+                <h3>Professional Services</h3>
+                <p>Find mental health professionals in your area for personalized guidance and support. You can also access services from psychology students for case study purposes, at no cost.</p>
+            </div>
+            <div class="service-card">
+                <h3>Emergency Services</h3>
+                <p>In case of an emergency, we provide quick access to helpline numbers, hotlines, and emergency services to ensure you get the immediate support you need.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <section class="professional-services">
+        <h2>Find Mental Health Support Near You</h2>
+        <p>Use our locator to find mental health professionals and services in your area.</p>
+
+        <!-- Google Map Embed -->
+        <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d56013.91081649236!2d77.4103076!3d28.6636281!3m2!1i1024!2i768!4f13.1!2m1!1spsychologist%20near%20me!5e0!3m2!1sen!2sin!4v1744363824318!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Clickable Overlay to Redirect -->
+            <div class="map-overlay" onclick="redirectToprofessionalTools()"></div>
+        </div>
+
+       
+    </section>
+
+    
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <h2>What People Are Saying</h2><br>
+        <div class="testimonial-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-item active">
+                <img src="images/pic1.jpg" alt="Person 1">
+                <p>"This platform has helped me immensely in understanding and managing my mental health. The resources are top-notch!"</p>
+                <h4>John Doe</h4>
+                <span>Patient</span>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-item">
+                <img src="images/pic2.jpg" alt="Person 2">
+                <p>"The mood tracker is a game-changer! It helps me understand my emotional patterns and how to address them effectively."</p>
+                <h4>Jane Smith</h4>
+                <span>Therapist</span>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-item">
+                <img src="images/pic3.jpg" alt="Person 3">
+                <p>"As a student studying psychology, I found this platform really useful for learning more about mental health support and resources."</p>
+                <h4>Emma Brown</h4>
+                <span>Psychology Student</span>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button class="nav-button" id="prevBtn">Previous</button>
+            <button class="nav-button" id="nextBtn">Next</button>
+        </div>
+    </section>
+
+    <!-- SOS Button -->
+<div id="sos-btn" class="sos-btn">
+    <img src="images/sos.png" alt="SOS Icon" />
+</div>
+
+<!-- SOS Popup Box (Initially Hidden) -->
+<div id="sos-popup" class="sos-popup">
+    <div class="sos-popup-header">
+        <span>SOS Support</span>
+        <button id="close-sos" class="close-sos-btn">X</button>
+    </div>
+    <div class="sos-popup-body">
+        <p><strong>Helpline Numbers:</strong></p>
+        <ul>
+            <li>National Suicide Prevention Lifeline: 1-800-273-8255</li>
+            <li>Crisis Text Line: Text HOME to 741741</li>
+            <li>Local Mental Health Helpline: 1-800-XXX-XXXX</li>
+        </ul>
+        <p><a href="emergencyService.php" class="emergency-link">Visit Emergency Services</a></p>
+        <p><a href="professionalTools.php" class="support-link">Find Nearby Support</a></p>
+    </div>
+</div>
+
+    <!-- Chatbot Icon -->
+<div id="chatbot-btn" class="chatbot-btn">
+    <img src="images/chatbot.png" alt="Chat Icon" />
+</div>
+
+<!-- Chatbot Window (Initially Hidden) -->
+<div id="chatbot-window" class="chatbot-window">
+    <div class="chatbot-header">
+        <span>Chat with us</span>
+        <button id="close-chat" class="close-chat-btn">X</button>
+    </div>
+    <div class="chatbot-body">
+        <div id="chat-history" class="chat-history">
+            <!-- Chat messages will appear here -->
+        </div>
+        <input type="text" id="user-input" placeholder="Ask me anything..." />
+        <button id="send-message" class="send-btn">Send</button>
+    </div>
+</div>
+
+    <!-- Footer --> 
+    <footer> 
+        <a href="#logo"><button class="cta-btn">Go Up</button></a>
+        <br><br>
+        <p>&copy; 2025 Mind Over Matter | All Rights Reserved</p> 
+    </footer> 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+
+
+<script>
+    var swiper = new Swiper(".hero-swiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".hero-swiper-button-next",
+            prevEl: ".hero-swiper-button-prev",
+        },
+        pagination: {
+            el: ".hero-swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    var swiper = new Swiper(".testimonial-swiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".testimonial-pagination",
+        },
+        navigation: {
+            nextEl: ".testimonial-swiper-button-next",
+            prevEl: ".testimonial-swiper-button-prev",
+        },
+    });
+</script>
+
+    <script>
+        function redirectToprofessionalTools() {
+            window.location.href = "professionalTools.html"; // Change to your actual professional services page URL
+        }
+    </script>
+
+<script>
+    // ========== SOS BUTTON LOGIC ==========
+    const sosBtn = document.getElementById('sos-btn');
+    const sosPopup = document.getElementById('sos-popup');
+    const closeSosBtn = document.getElementById('close-sos');
+
+    // Open the SOS popup when the SOS button is clicked
+    sosBtn.addEventListener('click', function() {
+        sosPopup.style.display = 'block';
+    });
+
+    // Close the SOS popup when the close button is clicked
+    closeSosBtn.addEventListener('click', function() {
+        sosPopup.style.display = 'none';
+    });
+</script>
+
+<script>
+    // ========== CHATBOT LOGIC ==========
+    const chatbotBtn = document.getElementById('chatbot-btn');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const closeChatBtn = document.getElementById('close-chat');
+    const sendMessageBtn = document.getElementById('send-message');
+    const userInput = document.getElementById('user-input');
+    const chatHistory = document.getElementById('chat-history');
+
+    // Open chatbot window
+    chatbotBtn.addEventListener('click', function() {
+        chatbotWindow.style.display = 'block';
+    });
+
+    // Close chatbot window
+    closeChatBtn.addEventListener('click', function() {
+        chatbotWindow.style.display = 'none';
+    });
+
+    // Predefined chatbot responses with flexible keyword detection
+    const chatbotResponses = [
+        { keyword: ["hi", "hello", "hey"], response: "Hello! How can I assist you today?" },
+        { keyword: ["how are you"], response: "I'm just a chatbot, but I'm always here to help!" },
+        { keyword: ["your name"], response: "I'm Mevi, your friendly virtual assistant!" },
+        { keyword: ["who made you"], response: "I was created to assist users like you!" },
+        { keyword: ["sos", "emergency"], response: "If this is an emergency, please click the <a href='emergencyService.html' target='_blank' style='color: blue; text-decoration: underline;'>Emergency Services</a> page for immediate assistance!" },
+        { keyword: ["ambulance"], response: "You can reach emergency medical services at <strong>911</strong> or visit the <a href='emergency.html' target='_blank' style='color: blue; text-decoration: underline;'>Emergency Services</a> page." },
+        { keyword: ["fire"], response: "For fire emergencies, call <strong>101</strong> or check our <a href='emergencyService.html' target='_blank' style='color: blue; text-decoration: underline;'>Emergency Services</a> page." },
+        { keyword: ["hospital"], response: "Click <a href='https://www.google.com/maps/search/hospitals+near+me' target='_blank' style='color: blue; text-decoration: underline;'>here</a> to find nearby hospitals." },
+        { keyword: ["police"], response: "Click <a href='https://www.google.com/maps/search/police+station+near+me' target='_blank' style='color: blue; text-decoration: underline;'>here</a> for the nearest police station." },
+        { keyword: ["help"], response: "If this is an emergency, please check the SOS button for immediate assistance." },
+        { keyword: ["sad", "lonely"], response: "I'm here for you. Try taking deep breaths or listening to calming music." },
+        { keyword: ["anxious"], response: "Anxiety can be overwhelming, but you're not alone. Would you like some relaxation tips?" },
+        { keyword: ["stressed"], response: "Stress can be tough. Would you like to read some relaxation techniques?" },
+        { keyword: ["yes"], response: "Great! Here's a simple relaxation technique: Try breathing in deeply for 4 seconds, hold for 4, and then exhale for 4. Repeat this 5 times to help calm your nerves."},
+        { keyword: ["no"], response: "That's okay. Let me know if you'd like assistance with anything else!"},
+        { keyword: ["default"], response: "I'm still learning. Could you try rephrasing that?" }
+    ];
+
+    // Function to send message
+    function sendMessage() {
+        const message = userInput.value.trim().toLowerCase();
+        if (message === '') return;
+
+        // Add user message to chat history
+        chatHistory.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+        chatHistory.scrollTop = chatHistory.scrollHeight; // Auto-scroll to bottom
+
+        // Find a matching response based on keywords
+        let response = chatbotResponses.find(entry => entry.keyword.some(kw => message.includes(kw)));
+        response = response ? response.response : chatbotResponses.find(entry => entry.keyword.includes("default")).response;
+
+        // Simulate chatbot response with delay
+        setTimeout(() => {
+            chatHistory.innerHTML += `<div><strong>Chatbot:</strong> ${response}</div>`;
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }, 1000);
+
+        // Clear input field
+        userInput.value = '';
+    }
+
+    // Send message when button is clicked
+    sendMessageBtn.addEventListener('click', sendMessage);
+
+    // Send message when Enter key is pressed
+    userInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+</script>
+
+
+<script>
+// Get all testimonial items
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    let currentIndex = 0;
+
+    // Show a specific testimonial based on the index
+    function showTestimonial(index) {
+        // Hide all testimonials
+        testimonials.forEach(testimonial => {
+            testimonial.classList.remove('active');
+        });
+
+        // Show the current testimonial
+        testimonials[index].classList.add('active');
+    }
+
+    // Handle next button click
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % testimonials.length; // Loop back to the first testimonial
+        showTestimonial(currentIndex);
+    });
+
+    // Handle previous button click
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length; // Loop to the last testimonial
+        showTestimonial(currentIndex);
+    });
+
+    // Initial testimonial
+    showTestimonial(currentIndex);
+</script>
+
+<script>
+    function closeNav() {
+        var mobileNav = document.getElementById("mobile-nav");
+        mobileNav.classList.remove("active");
+    }
+    function openNav() {
+        var mobileNav = document.getElementById("mobile-nav");
+        mobileNav.classList.add("active");
+    }
+</script>
+
+</html>

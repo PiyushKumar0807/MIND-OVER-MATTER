@@ -1,0 +1,248 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Over Matter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/professionalTools.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <div class="img-div">
+            <img id="logo" src="images/logo.png" alt="Logo">
+          </div>
+        </div>
+        <div class="mobile-nav-btn">
+          <button onclick="openNav()">
+            <img src="images/Hamburger_icon.svg.png" alt="" />
+          </button>
+        </div>
+        <div id="mobile-nav" class="mobile-nav">
+          <div class="cross-icon">
+            <button onclick="closeNav()">
+              <svg
+                fill="#000000"
+                height="20px"
+                width="20px"
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 490 490"
+                xml:space="preserve"
+              >
+                <polygon
+                  points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 
+                            489.292,457.678 277.331,245.004 489.292,32.337 "
+                />
+              </svg>
+            </button>
+          </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resourcelibrary.html">Resources Library</a></li>
+            <li><a href="interactiveTools.html">Interactive Tools</a></li>
+            <li>
+              <a href="professionalTools.html" class="active"
+                >Professional Service</a
+              >
+            </li>
+            <li><a href="emergencyService.html">Emergency Service</a></li>
+            <?php if (isset($_SESSION['username'])): ?>
+          <li><a href="#">Welcome <?php echo $_SESSION['username']; ?></a></li>
+           <li><a href="logout.php">Logout</a></li>
+            <?php else: ?>
+           <li><a href="login.html">Login</a></li>
+           <li><a href="signup.html">Sign Up</a></li>
+           <?php endif; ?>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!--end of header -->
+
+    <!-- content -->
+    <div class="content">
+      <div class="">
+        <div class="main-title-div">
+          <h2 class="title main-title">Resources</h2>
+        </div>
+
+        <div class="description-div">
+          <h2>
+            No one has to suffer by themselves <br />
+            Please use the free resources to help yourself and others
+          </h2>
+        </div>
+
+        <div class="container">
+          <div class="card">
+            <a href="https://www.moolchandhealthcare.com/">
+              <div class="img-div">
+                <img src="moolchandlogo.jpg" alt="" />
+              </div>
+              <h2 class="title">
+                Moolchand Hospital
+              </h2>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://kssgoa.org/">
+              <div class="img-div">
+                <img src="keshavsevalogo.jpeg" alt="" />
+              </div>
+              <h2 class="title">Keshav Seva Sadhna school</h2>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://mindcareclinic.co/">
+              <div class="img-div">
+                <img src="neurocare.png" alt="" />
+              </div>
+              <h2 class="title">
+               Mind N Neuro care
+              </h2>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://www.lybrate.com/lucknow/clinic/bodhitree-india-ashiyana-colony">
+              <div class="img-div">
+                <img
+                  src="images.png"
+                  alt=""
+                />
+              </div>
+              <h2 class="title">Bodhitree- centre for well-being and Training</h2>
+            </a>
+          </div>
+          <div class="card">
+            <a href="https://www.manasamitraclinic.com/">
+              <div class="img-div">
+                <img
+                  src="logo-wide.png"
+                  alt=""
+                />
+              </div>
+              <h2 class="title">Mansa Neuropsychiatry Centre</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of content -->
+
+        <!-- Chatbot Icon -->
+<div id="chatbot-btn" class="chatbot-btn">
+  <img src="images/chatbot.png" alt="Chat Icon" />
+</div>
+
+<!-- Chatbot Window (Initially Hidden) -->
+<div id="chatbot-window" class="chatbot-window">
+  <div class="chatbot-header">
+      <span>Chat with us</span>
+      <button id="close-chat" class="close-chat-btn">X</button>
+  </div>
+  <div class="chatbot-body">
+      <div id="chat-history" class="chat-history">
+          <!-- Chat messages will appear here -->
+      </div>
+      <input type="text" id="user-input" placeholder="Ask me anything..." />
+      <button id="send-message" class="send-btn">Send</button>
+  </div>
+</div>
+
+         <!-- Footer --> 
+    <footer> 
+      <a href="#logo"><button class="cta-btn">Go Up</button></a>
+      <br><br>
+      <p>&copy; 2025 Mind Over Matter | All Rights Reserved</p> 
+  </footer>  
+  </body>
+
+  <script>
+    function closeNav() {
+      var mobileNav = document.getElementById("mobile-nav");
+      mobileNav.classList.remove("active");
+    }
+    function openNav() {
+      var mobileNav = document.getElementById("mobile-nav");
+      mobileNav.classList.add("active");
+    }
+  </script>
+  <script>
+    // Get references to the elements
+    const chatbotBtn = document.getElementById('chatbot-btn');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const closeChatBtn = document.getElementById('close-chat');
+    const sendMessageBtn = document.getElementById('send-message');
+    const userInput = document.getElementById('user-input');
+    const chatHistory = document.getElementById('chat-history');
+
+    // Open the chatbot window when the icon is clicked
+    chatbotBtn.addEventListener('click', function() {
+        chatbotWindow.style.display = 'block';
+    });
+
+    // Close the chatbot window when the close button is clicked
+    closeChatBtn.addEventListener('click', function() {
+        chatbotWindow.style.display = 'none';
+    });
+
+    // Handle sending messages
+    sendMessageBtn.addEventListener('click', function() {
+        const message = userInput.value.trim();
+        if (message !== '') {
+            // Add user message to chat history
+            chatHistory.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+            
+            // Clear input field
+            userInput.value = '';
+
+            // Simulate a chatbot response
+            setTimeout(() => {
+                chatHistory.innerHTML += `<div><strong>Chatbot:</strong> I'm here to help! How can I assist you?</div>`;
+                chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the bottom
+            }, 1000);
+            
+            chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the bottom
+        }
+    });
+
+    // Optional: Allow user to press Enter to send a message
+    userInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            sendMessageBtn.click();
+        }
+    });
+</script>
+
+</html>

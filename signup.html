@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+     <h1 id="title">Sign up  </h1> 
+    <form action="register.php" method="POST">
+        <input type="text" name="username" required placeholder="Username">
+        <input type="email" name="email" required placeholder="Email">
+        <input type="password" name="password" required placeholder="Password">
+        <button type="submit">Register</button>
+    </form>
+   
+   
+    <p style="color: rgb(0, 0, 0);">Already have an account? <a href="login.html">Login here</a></p>
+</div>
+    <style>
+        p{
+            position: relative;
+    
+        }
+        #title{
+            color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+            padding-bottom:30px;
+            font-style: italic;
+        }
+
+        a{
+            color: rgb(173, 17, 235);
+            text-decoration: none;
+            position: relative;
+
+        }
+        a:hover{
+            color: black;
+        }
+
+        
+    </style>
+    
+</body>
+</html>
