@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,18 +69,11 @@ session_start();
             <li><a href="resourcelibrary.html">Resources Library</a></li>
             <li><a href="interactiveTools.html">Interactive Tools</a></li>
             <li>
-              <a href="professionalTools.html" class="active"
-                >Professional Service</a
-              >
+              <a href="professionalTools.html" class="active">Professional Service</a>
             </li>
             <li><a href="emergencyService.html">Emergency Service</a></li>
-            <?php if (isset($_SESSION['username'])): ?>
-          <li><a href="#">Welcome <?php echo $_SESSION['username']; ?></a></li>
-           <li><a href="logout.php">Logout</a></li>
-            <?php else: ?>
            <li><a href="login.html">Login</a></li>
            <li><a href="signup.html">Sign Up</a></li>
-           <?php endif; ?>
           </ul>
         </div>
       </nav>
@@ -108,7 +98,7 @@ session_start();
           <div class="card">
             <a href="https://www.moolchandhealthcare.com/">
               <div class="img-div">
-                <img src="moolchandlogo.jpg" alt="" />
+                <img src="images/moolchandlogo.jpg" alt="" />
               </div>
               <h2 class="title">
                 Moolchand Hospital
@@ -118,7 +108,7 @@ session_start();
           <div class="card">
             <a href="https://kssgoa.org/">
               <div class="img-div">
-                <img src="keshavsevalogo.jpeg" alt="" />
+                <img src="images/keshavsevalogo.jpeg" alt="" />
               </div>
               <h2 class="title">Keshav Seva Sadhna school</h2>
             </a>
@@ -126,7 +116,7 @@ session_start();
           <div class="card">
             <a href="https://mindcareclinic.co/">
               <div class="img-div">
-                <img src="neurocare.png" alt="" />
+                <img src="images/neurocare.png" alt="" />
               </div>
               <h2 class="title">
                Mind N Neuro care
@@ -137,7 +127,7 @@ session_start();
             <a href="https://www.lybrate.com/lucknow/clinic/bodhitree-india-ashiyana-colony">
               <div class="img-div">
                 <img
-                  src="images.png"
+                  src="images/images.png"
                   alt=""
                 />
               </div>
@@ -148,7 +138,7 @@ session_start();
             <a href="https://www.manasamitraclinic.com/">
               <div class="img-div">
                 <img
-                  src="logo-wide.png"
+                  src="images/logo-wide.png"
                   alt=""
                 />
               </div>
